@@ -1,0 +1,50 @@
+/* Additional styles for Starlight Blackjack */
+
+.card.back {
+    background: linear-gradient(45deg, #2d1b69, #00d4ff);
+    color: white;
+}
+
+.card.back:after {
+    content: "?";
+    font-size: 3rem;
+}
+
+.btn {
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.4);
+}
+
+.chip {
+    transition: all 0.3s;
+}
+
+.chip:hover {
+    transform: scale(1.1) rotate(10deg);
+}
+
+/* Animations */
+@keyframes dealCard {
+    0% { transform: translateY(-100px) rotateY(0deg); opacity: 0; }
+    100% { transform: translateY(0) rotateY(360deg); opacity: 1; }
+}
+
+.deal-animation {
+    animation: dealCard 0.5s ease-out forwards;
+}
+
+/* Responsive improvements */
+@media (max-width: 1200px) {
+    .game-area {
+        flex-direction: column;
+    }
+    
+    .panel, .game-table {
+        width: 100%;
+    }
+}
